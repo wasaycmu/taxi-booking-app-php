@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Make A Booking</title>
+</head>
+<body bgcolor="#00e6e6">
+	<p style="text-align:center">
+		<img src="karwa.png" style= "width:100px;height:100px;";>
+	</p>
+	<p  style="color:white; font-family:Century Gothic ; font-size:250%; text-align: center;"> Make A Booking</p>
+<br>
+<br>
+<p  style="color:white; font-family:Century Gothic ; font-size:120%; text-align: center;">
+<form action="makeBooking.php" method="post" style="color:white; font-family:Century Gothic ; font-size:120%; text-align: center;">
+	<p style= "align=center; font-family:Century Gothic ; color:white; font-weight: bold;" >
+    	<label for="departure">Pick Up Location:</label><br>
+        <input type="text" name="departure" id="departure">
+    </p>
+    <p style= "align=center; font-family:Century Gothic ; color:white; font-weight: bold;">
+    	<label for="destination">Drop Off Location:</label><br>
+        <input type="text" name="destination" id="destination">
+	
+    </p>
+	<p style= "align=center; font-family:Century Gothic ; color:white; font-weight: bold;" >
+    	<label for="pickTime">Pick Up Time:</label><br>
+        <input type="time" name="pickTime" id="pickTime">
+    </p>
+	<p style= "align=center; font-family:Century Gothic ;color:white; font-weight: bold;" >
+    	<label for="pickDate">Pick Up Date: <br>(Input in this format: yyyy/mm/dd)*</label><br>
+        <input type="text" name="pickDate" id="pickDate">
+    </p>
+	<p style= "align=center; font-family:Century Gothic ;color:white; font-weight: bold;" >
+    	<label for="extraDetails">Extra Information:</label><br>
+        <input type="text" name="extraDetails" id="extraDetails">
+    </p>
+    <input align="center"  type="submit" value="Book">
+	<form align="center" action="message.html">
+</form>
+</p>
+<form action="Booking.html" method="post" style="color:white; font-family:Century Gothic ; font-size:120%; text-align: center;">
+    <input type="submit" value="Go Back" />
+</form>
+</script>
+</body>
+</html>

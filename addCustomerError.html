@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Karwa WebApp</title>
+</head>
+<body bgcolor="#00e6e6">
+	<p style="text-align:center">
+		<img src="karwa.png" style= "width:100px;height:100px;";>
+	</p>
+	<p  style="color:white; font-family:Century Gothic ; font-size:250%; text-align: center;">New User</p>
+
+	<br>
+	<br>
+	<br>
+	<form action="insertCustomer.php" method="post" style="color:white; font-family:Century Gothic ; font-size:130%; text-align: center;">
+		<p>
+			<label for="e_mail">Email:</label><br>
+			<input type="text" name=e_mail id="e_mail">
+		</p>
+		<p>
+			<label for="f_name">First Name:</label><br>
+			<input type="text" name=f_name id="f_name">
+		</p>
+	
+		<p>
+			<label for="l_name">Last Name:</label><br>
+			<input type="text" name=l_name id="l_name">
+		</p>
+		<p>
+			<label for="mobile_number">Mobile Number:</label><br>
+			<input type=int name=mobile_number id="mobile_number">
+		</p>
+		<p>
+			<label for="password">Password:</label><br>
+			<input type="text" name=password id="password">
+		</p>
+	
+    
+		<input type="submit" value="Register User">
+	</form>
+	<p style="color:red; font-family:Century Gothic; font-size:75%; text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;
+		* <strong>Email</strong> or <strong>Mobile Number</strong> already exists.
+	</p>
+</body>
+</html>

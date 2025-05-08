@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Karwa WebApp</title>
+<style>
+a:link {
+	text-decoration:none;
+    color: white;
+    background-color: transparent;
+	font-size:175%;
+	font-family:Century Gothic ;
+}
+a:visited {
+	text-decoration:none;
+    color: white;
+    background-color: transparent;
+	font-size:175%;
+	font-family:Century Gothic ;
+}
+a:hover {
+	text-decoration:none;
+    color: yellow;
+    background-color: transparent;
+	font-size:175%;
+	font-family:Century Gothic ;
+}
+</style>
+</head>
+<body bgcolor="#00e6e6">
+	<p style="text-align:center">
+	<img src="karwa.png" style= "width:100px;height:100px;";>
+	</p>
+	<p  style="color:white; font-family:Century Gothic ; font-size:250%; text-align: center;">  Make A Booking</p>
+<form style="text-align:center" align="center" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+	<p style= "font-family:Century Gothic ; color:white; font-weight: bold;" >
+    	<label for="departure">Pick Up Location:</label>
+        <input type="text" name="departure" id="departure">
+    </p>
+    <p style= "font-family:Century Gothic ; color:white; font-weight: bold;">
+    	<label for="destination">Drop Off Location:</label>
+        <input type="text" name="destination" id="destination">
+	
+    </p>
+	<p style= "font-family:Century Gothic ; color:white; font-weight: bold;" >
+    	<label for="pickTime">Pick Up Time:</label>
+        <input type="time" name="pickTime" id="pickTime">
+    </p>
+	<p style= "font-family:Century Gothic ;color:white; font-weight: bold;" >
+    	<label for="pickDate">Pick Up Date:</label>
+        <input type="date" name="pickDate" id="pickDate">
+    </p>
+	<p style= "font-family:Century Gothic ;color:white; font-weight: bold;" >
+    	<label for="extraDetails">Extra Information:</label>
+        <input type="text" name="extraDetails" id="extraDetails">
+    </p>
+    <input type="submit" value="Update">
+</form>
+
+<br>
+<form style="text-align:center" action="Booking.html" method="post">
+    <input type="submit" value="Go Back" />
+</form>
+
+<?php
+if(isset($_POST['Update'])){
+	$link = mysqli_connect('mysql-multi-04.qatar.cmu.local','awasay','islamispeace786','Karwa','3327');
+	 
+	// Check connection
+	if($link === false){
+		die("ERROR: Could not connect. " . mysqli_connect_error());
+	}
+	$bookingID = $_GET['bookID'];
+	$destination = $_POST['destination'];
+	$departure = $_POST['departure'];
+	$pickTime = $_POST['pickTime'];
+	$pickDate = $_POST['pickDate'];
+	$extraDetails = $_POST['extraDetails'];
+
+	$sql = "UPDATE Booking
+			SET DropOffLocation = '$destination' , pickUpDate = '$pickDate' , pickUpTime = '$pickTime', PickUpLocation = '$departure', AddBookingInfo= '$extraDetails'
+			WHERE BookingID = '$bookingID';";		
+
+	if(mysqli_query($link, $sql)){
+		header("location: updateDone.html");
+	} else{
+		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	}
+	 
+	mysqli_close($link);
+}
+?>
+
+
+</body>
+</html>
